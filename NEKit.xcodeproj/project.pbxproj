@@ -268,6 +268,7 @@
 		F758CBD11DE021CA0045C117 /* StreamPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBCF1DE021CA0045C117 /* StreamPipe.swift */; };
 		F758CBD31DE022490045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
 		F758CBD61DE024DE0045C117 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD51DE024DE0045C117 /* HMAC.swift */; };
+		F758CBD71DE02F2B0045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1494,6 +1495,7 @@
 				3650FAF81D27D64500444E79 /* MD5Hash.swift in Sources */,
 				36D591BF1D6C40F2003E92B2 /* IPRange.swift in Sources */,
 				36D591C21D6C4895003E92B2 /* IPRangeListRule.swift in Sources */,
+				F758CBD71DE02F2B0045C117 /* ShadowsocksStreamObfuscater.swift in Sources */,
 				3650FAF21D27C8CB00444E79 /* CryptoEnum.swift in Sources */,
 				36411A601D167AC3005F4108 /* DNSSessionMatchType.swift in Sources */,
 				36C48D801CF88EDE0071804F /* SocketProtocol.swift in Sources */,
