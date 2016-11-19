@@ -8,6 +8,8 @@ public class ShadowsocksAdapter: AdapterSocket {
     public let encryptAlgorithm: CryptoAlgorithm
     public let host: String
     public let port: Int
+    
+    let streamObfuscaterType: ShadowsocksStreamObfuscater.Type
 
     var readingIV: Bool = false
     var nextReadTag: Int = 0
@@ -28,6 +30,11 @@ public class ShadowsocksAdapter: AdapterSocket {
         [unowned self] in
         self.getCrypto(.Decrypt)
         }()
+    
+    lazy var streamObfuscater: ShadowsocksStreamObfuscater = {
+        [unowned self] in
+        return self.streamObfuscaterType.init(key: self.key, iv: self.writeIV)
+        }()
 
     enum EncryptMethod: String {
         case AES128CFB = "AES-128-CFB", AES192CFB = "AES-192-CFB", AES256CFB = "AES-256-CFB"
@@ -39,11 +46,12 @@ public class ShadowsocksAdapter: AdapterSocket {
         case InitialVector = 25000, Connect
     }
 
-    public init(host: String, port: Int, encryptAlgorithm: CryptoAlgorithm, password: String) {
+    public init(host: String, port: Int, encryptAlgorithm: CryptoAlgorithm, password: String, streamObfuscaterType: ShadowsocksStreamObfuscater.Type = OriginStreamObfuscater.self) {
         self.encryptAlgorithm = encryptAlgorithm
         self.key = CryptoHelper.getKey(password, methodType: encryptAlgorithm)
         self.host = host
         self.port = port
+        self.streamObfuscaterType = streamObfuscaterType
         super.init()
     }
 
@@ -63,16 +71,9 @@ public class ShadowsocksAdapter: AdapterSocket {
         super.didConnect(socket)
 
         let helloData = NSMutableData(data: writeIV)
-        var response: [UInt8] = [0x03]
-        response.append(UInt8(request.host.utf8.count))
-        response += [UInt8](request.host.utf8)
-        var responseData = NSData(bytes: response, length: response.count)
-        responseData = encryptData(responseData)
-        helloData.appendData(responseData)
-        let portBytes = [UInt8](Utils.toByteArray(UInt16(request.port)).reverse())
-        responseData = NSData(bytes: portBytes, length: portBytes.count)
-        responseData = encryptData(responseData)
-        helloData.appendData(responseData)
+        var requestData = streamObfuscater.requestData(for: request)
+        encryptData(&requestData)
+        helloData.append(requestData)
 
         writeRawData(helloData, withTag: ShadowsocksTag.Connect.rawValue)
     }
@@ -92,6 +93,7 @@ public class ShadowsocksAdapter: AdapterSocket {
     }
 
     override public func writeData(data: NSData, withTag tag: Int) {
+        var data = streamObfuscater.output(data: data)
         writeRawData(encryptData(data), withTag: tag)
     }
 
@@ -103,6 +105,7 @@ public class ShadowsocksAdapter: AdapterSocket {
             readingIV = false
             super.readDataWithTag(nextReadTag)
         } else {
+            var data = streamObfuscater.input(data: data)
             let readData = decryptData(data)
             delegate?.didReadData(readData, withTag: tag, from: self)
         }

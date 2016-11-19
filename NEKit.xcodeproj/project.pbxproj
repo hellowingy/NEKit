@@ -266,6 +266,7 @@
 		36E44A021CF2ED4800185DBF /* TUNInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E44A011CF2ED4800185DBF /* TUNInterface.swift */; };
 		F758CBD01DE021CA0045C117 /* SocketStreamProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBCE1DE021CA0045C117 /* SocketStreamProcesser.swift */; };
 		F758CBD11DE021CA0045C117 /* StreamPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBCF1DE021CA0045C117 /* StreamPipe.swift */; };
+		F758CBD31DE022490045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -521,6 +522,7 @@
 		36E44A011CF2ED4800185DBF /* TUNInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TUNInterface.swift; sourceTree = "<group>"; };
 		F758CBCE1DE021CA0045C117 /* SocketStreamProcesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketStreamProcesser.swift; sourceTree = "<group>"; };
 		F758CBCF1DE021CA0045C117 /* StreamPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPipe.swift; sourceTree = "<group>"; };
+		F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowsocksStreamObfuscater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -853,13 +855,13 @@
 		36B162311CDDA0F300F24C97 /* AdapterSocket */ = {
 			isa = PBXGroup;
 			children = (
+				F758CBD41DE0230F0045C117 /* Shadowsocks */,
 				36B162331CDDA0F300F24C97 /* Factory */,
 				36B162151CDDA0EA00F24C97 /* AdapterSocket.swift */,
 				36B162321CDDA0F300F24C97 /* DirectAdapter.swift */,
 				366EB5AC1CDE0FCE00E0E942 /* HTTPAdapter.swift */,
 				368CBDA51D7911FA003CEA62 /* RejectAdapter.swift */,
 				366EB5AD1CDE0FCE00E0E942 /* SecureHTTPAdapter.swift */,
-				366EB5CE1CE0742F00E0E942 /* ShadowsocksAdapter.swift */,
 				366EB5C21CDF375B00E0E942 /* SpeedAdapter.swift */,
 				3623479F1D824E4300A047DE /* SOCKS5Adapter.swift */,
 			);
@@ -998,6 +1000,15 @@
 				36411A781D1FC224005F4108 /* UDPDirectStack.swift */,
 			);
 			path = IPStack;
+			sourceTree = "<group>";
+		};
+		F758CBD41DE0230F0045C117 /* Shadowsocks */ = {
+			isa = PBXGroup;
+			children = (
+				F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */,
+				366EB5CE1CE0742F00E0E942 /* ShadowsocksAdapter.swift */,
+			);
+			name = Shadowsocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1337,6 +1348,7 @@
 				36B162111CDDA0E000F24C97 /* RuleManager.swift in Sources */,
 				3664F0BE1CE3069F008BA6D8 /* Opt.swift in Sources */,
 				366EB5B81CDE150C00E0E942 /* SecureHTTPAdapterFactory.swift in Sources */,
+				F758CBD31DE022490045C117 /* ShadowsocksStreamObfuscater.swift in Sources */,
 				3629504B1D6AE30C001A30F6 /* ProxySocketEvent.swift in Sources */,
 				36B1622D1CDDA0EA00F24C97 /* SocketTag.swift in Sources */,
 				36411A5C1D167AA9005F4108 /* DNSSessionMatchResult.swift in Sources */,
