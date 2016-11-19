@@ -267,6 +267,7 @@
 		F758CBD01DE021CA0045C117 /* SocketStreamProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBCE1DE021CA0045C117 /* SocketStreamProcesser.swift */; };
 		F758CBD11DE021CA0045C117 /* StreamPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBCF1DE021CA0045C117 /* StreamPipe.swift */; };
 		F758CBD31DE022490045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
+		F758CBD61DE024DE0045C117 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD51DE024DE0045C117 /* HMAC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -523,6 +524,7 @@
 		F758CBCE1DE021CA0045C117 /* SocketStreamProcesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketStreamProcesser.swift; sourceTree = "<group>"; };
 		F758CBCF1DE021CA0045C117 /* StreamPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPipe.swift; sourceTree = "<group>"; };
 		F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowsocksStreamObfuscater.swift; sourceTree = "<group>"; };
+		F758CBD51DE024DE0045C117 /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -750,6 +752,7 @@
 		3650FAE01D27B9F300444E79 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F758CBD51DE024DE0045C117 /* HMAC.swift */,
 				3650FAED1D27C8A900444E79 /* CCCrypto.swift */,
 				3650FAF01D27C8CB00444E79 /* CryptoEnum.swift */,
 				3650FAF31D27CD8400444E79 /* CryptoHelper.swift */,
@@ -1352,6 +1355,7 @@
 				3629504B1D6AE30C001A30F6 /* ProxySocketEvent.swift in Sources */,
 				36B1622D1CDDA0EA00F24C97 /* SocketTag.swift in Sources */,
 				36411A5C1D167AA9005F4108 /* DNSSessionMatchResult.swift in Sources */,
+				F758CBD61DE024DE0045C117 /* HMAC.swift in Sources */,
 				36411A651D167AF2005F4108 /* DirectRule.swift in Sources */,
 				366EB5C31CDF375B00E0E942 /* SpeedAdapter.swift in Sources */,
 				366EB5C91CE061C500E0E942 /* RuleParser.swift in Sources */,
