@@ -269,6 +269,7 @@
 		F758CBD31DE022490045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
 		F758CBD61DE024DE0045C117 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD51DE024DE0045C117 /* HMAC.swift */; };
 		F758CBD71DE02F2B0045C117 /* ShadowsocksStreamObfuscater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD21DE022490045C117 /* ShadowsocksStreamObfuscater.swift */; };
+		F758CBD81DE035790045C117 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758CBD51DE024DE0045C117 /* HMAC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1527,6 +1528,7 @@
 				362347A11D824E4300A047DE /* SOCKS5Adapter.swift in Sources */,
 				36C48D791CF88EDA0071804F /* CountryRule.swift in Sources */,
 				36C48D821CF88EE60071804F /* HTTPAuthentication.swift in Sources */,
+				F758CBD81DE035790045C117 /* HMAC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
